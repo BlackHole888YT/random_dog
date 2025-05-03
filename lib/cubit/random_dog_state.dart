@@ -4,8 +4,14 @@ sealed class RandomDogState {}
 
 final class RandomDogInitial extends RandomDogState {}
 
-final class GetRandomImage extends RandomDogState {
-  final String image;
+final class GetDogInfo extends RandomDogState {
+  final List<DogModel> dogs;
 
-  GetRandomImage(this.image);
+  GetDogInfo(this.dogs);
+}
+
+final class RandomDogError extends RandomDogState {
+  final String message;
+
+  RandomDogError(this.message);
 }
